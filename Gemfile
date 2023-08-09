@@ -74,3 +74,6 @@ end
 
 gem 'nokogiri', '~> 1.15', '>= 1.15.3'
 
+gem 'devise'
+
+
