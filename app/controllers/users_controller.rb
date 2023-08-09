@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-    def index
-      # Your code to fetch and prepare data goes here
-      @users = User.all
-    end
+  def index
+    # @current_user = (current_user.name if user_signed_in?)
+  end
   end
   
