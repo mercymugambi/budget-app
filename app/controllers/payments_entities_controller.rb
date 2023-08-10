@@ -27,8 +27,9 @@ class PaymentsEntitiesController < ApplicationController
         format.html { redirect_to payments_entity_url(@payments_entity), notice: 'Entity was successfully created.' }
         format.json { render :show, status: :created, location: @payments_entity }
       else
-        format.html { render :new, status: :unprocessable_payments_entity }
-        format.json { render json: @payments_entity.errors, status: :unprocessable_payments_entity }
+        format.html { render :new, status: :unprocessable_entity }
+format.json { render json: @payments_entity.errors, status: :unprocessable_entity }
+
       end
     end
   end
@@ -37,11 +38,11 @@ class PaymentsEntitiesController < ApplicationController
   def update
     respond_to do |format|
       if @payments_entity.update(payments_entity_params)
-        format.html { redirect_to entity_url(@payments_entity), notice: 'Entity was successfully updated.' }
+        format.html { redirect_to payments_entity_url(@payments_entity), notice: 'Entity was successfully updated.' }
         format.json { render :show, status: :ok, location: @payments_entity }
       else
-        format.html { render :edit, status: :unprocessable_payments_entity }
-        format.json { render json: @payments_entity.errors, status: :unprocessable_payments_entity }
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @payments_entity.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,6 +66,6 @@ class PaymentsEntitiesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def payments_entity_params
-    params.require(:payments_entity).permit(:author_id, :name, :amount, :created_at)
+    params.require(:payments_entity).permit(:name, :amount, :created_at)
   end
 end
