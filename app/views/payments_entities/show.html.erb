@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @payments_entity %>
+
+<div>
+  <%= link_to "Edit this payments_entity", edit_payments_entity_path(@payments_entity) %> |
+  <%= link_to "Back to payments_entities", payments_entities_path %>
+
+  <%= button_to "Destroy this payments entity", @payments_entity, method: :delete %>
+</div>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Entities</h1>
+
+<div id="payments_entities">
+  <% @payments_entities.each do |payments_entity| %>
+    <%= render payments_entity %>
+    <p>
+      <%= link_to "Show this payments_entity", payments_entity %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New payments_entity", new_payments_entity_path %>
