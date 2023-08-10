@@ -20,18 +20,17 @@ class GroupsController < ApplicationController
   # POST /groups or /groups.json
   def create
     @group = Group.new(group_params)
-
-    respond_to do |format|
+    @group.user = current_user # Associate the current user with the group
+  
       if @group.save
-        format.html { redirect_to group_url(@group), notice: 'Group was successfully created.' }
-        format.json { render :show, status: :created, location: @group }
+        redirect_to users_path, notice: 'Group was successfully created.'
+        
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
+         render :new
+        
       end
-    end
   end
-
+  
   # PATCH/PUT /groups/1 or /groups/1.json
   def update
     respond_to do |format|
@@ -43,6 +42,11 @@ class GroupsController < ApplicationController
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show_payments
+    @group = Group.find(params[:id])
+    @payments_entities = @group.payments_entities
   end
 
   # DELETE /groups/1 or /groups/1.json
