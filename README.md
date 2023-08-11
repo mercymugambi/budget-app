@@ -106,7 +106,7 @@ rspec spec
 ```
 ### Deployment
 
-  <!-- - The website is deployed [here](https://cash-flow-nexus.onrender.com) -->
+  - The website is deployed [here](https://budget-iue6.onrender.com)
 
 <!-- AUTHORS -->
 
@@ -148,7 +148,7 @@ If you like this project please show support by staring ⭐️.
 
 ## Presentation <a name="presentation"></a>
 
-<!-- * I made a short [video](https://www.loom.com/share/2b5c5c04879f4dd29d23e85ee0b01a6b?sid=6c25fd1d-b5c4-4e94-9c6a-4474d9c883c2) presentation. -->
+* I made a short [video](https://www.loom.com/share/419f032c18204301b4ef159b346fa3ff?sid=f344b4c2-8b0a-412e-b69c-2dc8902fdfc1) presentation.
 
 
 <!-- LICENSE -->
