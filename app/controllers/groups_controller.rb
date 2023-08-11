@@ -25,16 +25,16 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.user = current_user # Associate the current user with the group
-  
-      if @group.save
-        redirect_to groups_path, notice: 'Group was successfully created.'
-        
-      else
-         render :new
-        
-      end
+
+    if @group.save
+      redirect_to groups_path, notice: 'Group was successfully created.'
+
+    else
+      render :new
+
+    end
   end
-  
+
   # PATCH/PUT /groups/1 or /groups/1.json
   def update
     respond_to do |format|
