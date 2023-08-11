@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
+require 'capybara/rails'
+
+RSpec.configure do |config|
+  config.include Capybara::DSL
+end
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.6'
@@ -67,6 +72,7 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
