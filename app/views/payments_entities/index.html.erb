@@ -1,11 +1,13 @@
 <p style="color: green"><%= notice %></p>
 <h1>Entities</h1>
-
+<%= @total %>
 <div id="payments_entities">
-  <% @payments_entities.each do |payments_entity| %>
-    <%= render 'payments_entity', payments_entity: payments_entity %>
-  <% end %>
-</div>
-<%= link_to "Add New Transaction", new_group_payments_entity_path %>
+  <% @payments_entities.each do |pe| %>
+    <%= pe.name %>
+    <%= pe.amount %> <hr>
+    <% end %>
+    </div>
+    <%= link_to "Add New Transaction", new_group_payments_entity_path %> <br>
+    <%= link_to "Back to Categories", groups_path %>
 
 

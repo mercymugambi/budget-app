@@ -4,8 +4,8 @@ class PaymentsEntitiesController < ApplicationController
 
   def index
     @group = Group.find(params[:group_id])
-    @payments_entities = @group.payments_entities.where(author: current_user).order(created_at: :desc)
-    
+    @payments_entities = @group.payments_entities.where(author_id: current_user.id).order(created_at: :desc)
+    @total = @payments_entities.sum(:amount)
   end
 
   def new
@@ -14,6 +14,7 @@ class PaymentsEntitiesController < ApplicationController
   end
 
   def show
+    @group = Group.find(params[:group_id])
     @payment = @group.payments_entities.build
   end
 
@@ -22,12 +23,12 @@ class PaymentsEntitiesController < ApplicationController
     @payment.author_id = current_user.id
   
     if @payment.save
-      # Update the @payments_entities variable to include the new transaction
-      @payments_entities = @group.payments_entities
-  
+      Categorisation.create(payments_entity: @payment, group: @group)
+      #Update the @payments_entities variable to include the new transaction
+      # @payments_entities = @group.payments_entities
       redirect_to group_payments_entities_path(@group), notice: 'Transaction added successfully.'
     else
-      render :show
+      render :new
     end
   end
 

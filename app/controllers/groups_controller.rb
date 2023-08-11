@@ -3,7 +3,11 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = current_user.groups
+    @total = {}
+    @groups.each do |group|
+      @total[group] = group.payments_entities.sum(:amount)
+    end
   end
 
   # GET /groups/1 or /groups/1.json
@@ -23,7 +27,7 @@ class GroupsController < ApplicationController
     @group.user = current_user # Associate the current user with the group
   
       if @group.save
-        redirect_to users_path, notice: 'Group was successfully created.'
+        redirect_to groups_path, notice: 'Group was successfully created.'
         
       else
          render :new

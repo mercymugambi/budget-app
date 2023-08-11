@@ -1,4 +1,5 @@
 class Group < ApplicationRecord
   belongs_to :user
-  has_and_belongs_to_many :payments_entities
+  has_many  :categorisations
+  has_many :payments_entities, through: :categorisations
 end

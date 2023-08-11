@@ -1,13 +1,10 @@
 <p style="color: green"><%= notice %></p>
 <h1>Group</h1>
 <div id="groups">
-  <% @groups.each do |group| %>
-    <% current_user.groups.each do |group| %>
-      <%= render group %>
-      <p>
-        <%= link_to "Show this group", group %>
-      </p>
-    <% end %>
-  <% end %>
+<% @groups.each do |group| %>
+<%= link_to group.name, group_payments_entities_path(group) %>
+<%= link_to group.icon, group_payments_entities_path(group) %> 
+<%= @total[group] %><hr>
+<% end %>
 </div>
 <%= link_to "New Category", new_group_path %>

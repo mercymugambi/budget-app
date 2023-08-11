@@ -32,11 +32,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_10_205125) do
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
-  create_table "groups_payments_entities", id: false, force: :cascade do |t|
-    t.bigint "group_id", null: false
-    t.bigint "payments_entity_id", null: false
-  end
-
   create_table "payments_entities", force: :cascade do |t|
     t.integer "author_id"
     t.string "name"
