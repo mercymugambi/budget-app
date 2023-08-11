@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
+    @currentuser=current_user.name
     @groups = current_user.groups
     @total = {}
     @groups.each do |group|

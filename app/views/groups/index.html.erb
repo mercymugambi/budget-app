@@ -1,10 +1,38 @@
-<p style="color: green"><%= notice %></p>
-<h1>Group</h1>
-<div id="groups">
-<% @groups.each do |group| %>
-<%= link_to group.name, group_payments_entities_path(group) %>
-<%= link_to group.icon, group_payments_entities_path(group) %> 
-<%= @total[group] %><hr>
-<% end %>
+<nav class='flexer'>
+<div></div>
+      <h2 class='banner'>Categories</h2>
+      <div>
+<%= button_to 'Logout', destroy_user_session_path, method: :delete,class: 'login-btn' %>
+      </div>
+</nav>
+
+<div class='hero'>
+<p>Hello <%= @currentuser %>,Below are your categories!</p>
 </div>
-<%= link_to "New Category", new_group_path %>
+
+<div class='overall-container'>
+<% if @groups.empty? %>
+  <p>No categories available. Add new categories</p>
+<% else %>
+
+<% @groups.each do |group| %>
+    <div class="category-card">
+      <%= link_to group_payments_entities_path(group),class:'a-tag blacker' do %>
+        <div class="category-content flexer">
+        
+          <div class="category-details flexer">
+            <h4 class="category-name"><%= group.name %></h4>
+            <p class="category-amount">$<%= @total[group] %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+</div>
+
+
+<div class='bottom-button sign-links'>
+  <%= link_to 'ADD NEW CATEGORY', new_group_path, class: 'new-cart a-tag' %>
+</div>
