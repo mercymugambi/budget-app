@@ -77,13 +77,13 @@ end
 
 group :test do
   # gem 'capybara'
-  
+
   gem 'faker'
   gem 'jquery-rails'
-  
+
   # gem 'rspec-rails'
 end
 
-gem 'rubocop'
 gem 'devise'
 gem 'nokogiri', '~> 1.15', '>= 1.15.3'
+gem 'rubocop'
