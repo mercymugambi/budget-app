@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
-# require 'capybara/rails'
+
+require 'capybara/rspec'
+Capybara.default_driver = :rack_test
 
 # RSpec.configure do |config|
 #   config.include Capybara::DSL
@@ -77,6 +79,7 @@ group :test do
 end
 
 gem 'nokogiri', '~> 1.15', '>= 1.15.3'
+gem 'faker'
 
 gem 'devise'
 

@@ -19,11 +19,11 @@
     <div class="category-card">
       <%= link_to group_payments_entities_path(group),class:'a-tag blacker' do %>
         <div class="category-content flexer">
-        <% if group.icon.attached? %>
-          <%= image_tag group.icon, class: 'category-icon' %>
-        <% else %>
-          <%= image_tag 'placeholder-icon.png', alt: 'Placeholder Icon', class: 'category-icon' %>
-        <% end %>
+          <% if group.icon.present? %>
+            <%= image_tag group.icon, alt: group.name, class: 'category-icon' %>
+          <% else %>
+            <%= image_tag 'placeholder-icon.png', alt: 'Placeholder Icon', class: 'category-icon' %>
+          <% end %>
 
           <div class="category-details flexer">
             <h4 class="category-name"><%= group.name %></h4>
@@ -36,7 +36,6 @@
 <% end %>
 
 </div>
-
 
 <div class='bottom-button sign-links'>
   <%= link_to 'ADD NEW CATEGORY', new_group_path, class: 'new-cart a-tag' %>

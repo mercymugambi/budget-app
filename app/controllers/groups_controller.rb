@@ -28,11 +28,11 @@ class GroupsController < ApplicationController
     @group.user = current_user # Associate the current user with the group
 
     if @group.save
+      @group.icon.attach(params[:group][:icon]) if params[:group][:icon].present?
       redirect_to groups_path, notice: 'Group was successfully created.'
 
     else
       render :new
-
     end
   end
 
