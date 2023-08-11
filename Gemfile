@@ -74,12 +74,12 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'rspec-rails'
   gem 'capybara'
+  gem 'rspec-rails'
 end
 
-gem 'nokogiri', '~> 1.15', '>= 1.15.3'
 gem 'faker'
+gem 'nokogiri', '~> 1.15', '>= 1.15.3'
 
 gem 'devise'
 

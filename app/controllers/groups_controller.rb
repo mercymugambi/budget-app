@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @currentuser=current_user.name
+    @currentuser = current_user.name
     @groups = current_user.groups
     @total = {}
     @groups.each do |group|
@@ -71,7 +71,6 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  
   def group_params
     params.require(:group).permit(:name, :icon)
   end

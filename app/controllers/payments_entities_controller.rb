@@ -27,8 +27,8 @@ class PaymentsEntitiesController < ApplicationController
       # Update the @payments_entities variable to include the new transaction
       # @payments_entities = @group.payments_entities
       redirect_to group_payments_entities_path(@group), notice: 'Transaction added successfully.'
-  else
-    puts @payment.errors.full_messages
+    else
+      puts @payment.errors.full_messages
       render :new
     end
   end
