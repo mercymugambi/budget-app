@@ -1,5 +1,5 @@
 <nav class='flexer'>
-<div></div>
+
       <h2 class='banner'>Categories</h2>
       <div>
 <%= button_to 'Logout', destroy_user_session_path, method: :delete,class: 'login-btn' %>
@@ -7,7 +7,7 @@
 </nav>
 
 <div class='hero'>
-<p>Hello <%= @currentuser %>,Below are your categories!</p>
+<p class = "welcome-note">Hello <%= @currentuser %>!<br>Below are your categories!</p>
 </div>
 
 <div class='overall-container'>
@@ -19,7 +19,12 @@
     <div class="category-card">
       <%= link_to group_payments_entities_path(group),class:'a-tag blacker' do %>
         <div class="category-content flexer">
-        
+        <% if group.icon.attached? %>
+          <%= image_tag group.icon, class: 'category-icon' %>
+        <% else %>
+          <%= image_tag 'placeholder-icon.png', alt: 'Placeholder Icon', class: 'category-icon' %>
+        <% end %>
+
           <div class="category-details flexer">
             <h4 class="category-name"><%= group.name %></h4>
             <p class="category-amount">$<%= @total[group] %></p>

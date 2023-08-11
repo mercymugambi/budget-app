@@ -22,12 +22,13 @@ class PaymentsEntitiesController < ApplicationController
     @payment = @group.payments_entities.build(payments_entity_params)
     @payment.author_id = current_user.id
 
-    if @payment.save
+    if @payment.valid? && @payment.save
       Categorisation.create(payments_entity: @payment, group: @group)
       # Update the @payments_entities variable to include the new transaction
       # @payments_entities = @group.payments_entities
       redirect_to group_payments_entities_path(@group), notice: 'Transaction added successfully.'
-    else
+  else
+    puts @payment.errors.full_messages
       render :new
     end
   end

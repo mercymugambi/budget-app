@@ -1,5 +1,3 @@
-<h1>New Payment</h1>
 
-<%= render "form", payments_entity: @payments_entity %>
 
-<br>
+<%= render partial: 'form', locals: { group: @group, payments_entity: @payments_entity } %>
