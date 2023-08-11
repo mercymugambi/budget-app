@@ -278,7 +278,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.6)
   rspec-rails
-  rubocop (>= 1.0, < 2.0)
+  rubocop
   sprockets-rails
   stimulus-rails
   turbo-rails

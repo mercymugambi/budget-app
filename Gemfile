@@ -3,8 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
-require 'capybara/rspec'
-Capybara.default_driver = :rack_test
+# Capybara.default_driver = :rack_test
 
 # RSpec.configure do |config|
 #   config.include Capybara::DSL
@@ -59,6 +58,10 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'capybara'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -73,16 +76,12 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'rspec-rails'
+  # gem 'capybara'
+  gem 'devise'
+  gem 'faker'
+  gem 'jquery-rails'
+  gem 'nokogiri', '~> 1.15', '>= 1.15.3'
+  # gem 'rspec-rails'
 end
 
-gem 'faker'
-gem 'nokogiri', '~> 1.15', '>= 1.15.3'
-
-gem 'devise'
-
-gem 'jquery-rails'
-
-gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'rubocop'
