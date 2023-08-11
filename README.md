@@ -3,7 +3,7 @@
 
 # 📗 Table of Contents
 
-- [Cash Flow Nexus](#Budget-APP)
+- [Budget App](#Budget-APP)
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 \[Budget-APP\] ](#-Budget-APP)
   - [🛠 Built With ](#-built-with-)
@@ -67,17 +67,17 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
   ```
-  cd budget_app
+  cd budget-app
   ```
   ```
-  git clone https://github.com/mercymugambi/budget_app.git
+  git clone https://github.com/mercymugambi/budget-app.git
   ```
 ### Install
 
 Install this project with:
 
   ```
-  cd budget_app
+  cd budget-app
   ```
   ```
   bundle install && npm install
@@ -129,7 +129,7 @@ rspec spec
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/mercymugambi/budget_app/issues).
+Feel free to check the [issues page](https://github.com/mercymugambi/budget-app/issues).
 
 
 <!-- SUPPORT -->
