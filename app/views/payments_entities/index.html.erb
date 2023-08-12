@@ -1,0 +1,31 @@
+<nav class='flexer'>
+<a href='<%= groups_path %>' class='nav-link'>
+        <svg xmlns="http://www.w3.org/2000/svg" class='back-arrow' fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+      </a>
+      <h2 class='banner'>TRANSACTIONS</h2>
+      <div>
+<%= button_to 'Logout', destroy_user_session_path, method: :delete,class: 'login-btn' %>
+      </div>
+</nav>
+<div class='overall-container'>
+<div class='hero'>
+  <p>Total amount for this category: $ <%= @total %></p>
+</div>
+
+<%if @payments_entities.empty?%>
+<p>No transactions add to this category</p>
+<%else%> 
+<% @payments_entities.each do |pe| %>
+  <div class="category-card flexerier">
+    <p><strong>Name:</strong> <%= pe.name %></p>
+    <p><strong></strong>$<%= pe.amount %></p>
+  </div>
+<% end %> 
+<% end %> 
+<div class='bottom-button sign-links'> 
+ <%= link_to 'Add New Transaction', new_group_payments_entity_path, class: 'new-cart a-tag' %>
+</div>
+
+

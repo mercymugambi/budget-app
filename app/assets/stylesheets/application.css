@@ -13,3 +13,91 @@
  *= require_tree .
  *= require_self
  */
+@import 'font-awesome';
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.03em;
+  overflow-x: hidden;
+  font-family: 'proxima-nova', sans-serif;
+}
+
+.a-tag {
+  text-decoration: none;
+}
+
+.back-arrow {
+  width: 35px;
+  height: 35px;
+  fill: #fff;
+  color: #fff;
+}
+
+nav {
+  background: #3778c2;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 3%;
+}
+
+.banner {
+  color: #fff;
+}
+
+.flexer {
+  display: flex;
+}
+
+.flexerier {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-btn {
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+form {
+  flex-direction: column;
+  width: 100%;
+}
+
+.field {
+  margin-bottom: 4px;
+}
+
+.field input[type="email"],
+.field input[type="text"],
+.field input[type="number"],
+.field input[type="password"] {
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.field input[type="email"]::placeholder,
+.field input[type="text"]::placeholder,
+.field input[type="number"]::placeholder,
+.field input[type="password"]::placeholder {
+  color: #ccc;
+}
+
+.center {
+  text-align: center;
+  color: #434b54;
+  margin-top: 10%;
+}
+
+.bluer {
+  background: #3778c2;
+  color: #fff;
+}

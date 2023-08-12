@@ -1,0 +1,34 @@
+<%= form_with(model: [@group, @payments_entity]) do |form| %>
+
+  <nav class='flexer'>
+<a href='<%= group_payments_entities_path(@group) %>' class='nav-link'>
+        <svg xmlns="http://www.w3.org/2000/svg" class='back-arrow' fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+      </a>
+      <h2 class='banner'>ADD</h2>
+      <div>
+    <%= form.submit 'Create Entry', class: 'login-btn' %>
+  </div>
+</nav>
+  <% if payments_entity.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(payments_entity.errors.count, "error") %> prohibited this payments_entity from being saved:</h2>
+
+      <ul>
+        <% payments_entity.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Name"%>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :amount, placeholder: "Amount" %>
+  </div>
+
+<% end %>
