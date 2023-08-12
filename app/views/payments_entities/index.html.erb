@@ -16,16 +16,15 @@
 
 <%if @payments_entities.empty?%>
 <p>No transactions add to this category</p>
-<%else%>
+<%else%> 
 <% @payments_entities.each do |pe| %>
-  <div class="category-card">
+  <div class="category-card flexer">
     <p><strong>Name:</strong> <%= pe.name %></p>
-    <p><strong>Amount:</strong>$<%= pe.amount %></p>
+    <p><strong></strong>$<%= pe.amount %></p>
   </div>
-<% end %>
-<% end %>
-
-<div class='bottom-button sign-links'>
+<% end %> 
+<% end %> 
+<div class='bottom-button sign-links'> 
  <%= link_to 'Add New Transaction', new_group_payments_entity_path, class: 'new-cart a-tag' %>
 </div>
 
