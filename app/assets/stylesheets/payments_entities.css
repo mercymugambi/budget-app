@@ -1,3 +1,8 @@
+body {
+  font-family: 'proxima-nova', sans-serif;
+  margin: 0;
+}
+
 .hero {
   background: #fff;
   margin-bottom: 2%;

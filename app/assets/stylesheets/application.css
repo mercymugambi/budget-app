@@ -53,6 +53,12 @@ nav {
   display: flex;
 }
 
+.flexerier {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .login-btn {
   border: none;
   background: none;
